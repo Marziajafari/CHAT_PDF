@@ -1,0 +1,29 @@
+# Python
+backend/.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local data: uploaded PDFs, SQLite database, ChromaDB vectors
+backend/data/*
+!backend/data/.gitkeep
+*.sqlite
+*.sqlite3
+*.db
+
+# Secrets / local config
+.env
+backend/.env
+frontend/.env
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/coverage/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0f1b3d;
+  --color-ink-soft: #55608a;
+  --color-canvas: #f4f5fa;
+  --color-line: #e2e5f0;
+  --color-brand: #3b5bdb;
+  --color-brand-dark: #2f49b3;
+  --color-accent: #7048e8;
+  --color-ok: #2b8a3e;
+  --color-warn: #e8590c;
+  --color-bad: #c92a2a;
+  --font-sans: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Flashcard flip */
+.flip-scene { perspective: 1200px; }
+.flip-card { position: relative; transform-style: preserve-3d; transition: transform 0.5s; }
+.flip-card[data-flipped="true"] { transform: rotateY(180deg); }
+.flip-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.flip-back { transform: rotateY(180deg); }
+
+@media (prefers-reduced-motion: reduce) {
+  .flip-card { transition: none; }
+  .animate-bounce, .animate-spin { animation: none; }
+}
